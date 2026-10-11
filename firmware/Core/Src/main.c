@@ -102,11 +102,11 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USART3_UART_Init();
   /* USER CODE BEGIN 2 */
-Motor_Init();
-Encoder_Init();
-Gray_Init();
-OLED_Init();
-StateMachine_Init();
+  Motor_Init();
+  Encoder_Init();
+  Gray_Init();
+  OLED_Init();
+  StateMachine_Init();
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -116,7 +116,22 @@ StateMachine_Init();
     /* USER CODE END WHILE */
 
     /* USER CODE BEGIN 3 */
-    StateMachine_Run();
+    //StateMachine_Run();
+    // 左轮正转，右轮正转，速度 500 (50%)
+Motor_SetSpeed(MOTOR_LEFT, 500);
+Motor_SetSpeed(MOTOR_RIGHT, 500);
+HAL_Delay(2000); // 转 2 秒
+
+// 左轮反转，右轮反转，速度 500
+Motor_SetSpeed(MOTOR_LEFT, -500);
+Motor_SetSpeed(MOTOR_RIGHT, -500);
+HAL_Delay(2000); // 转 2 秒
+
+// 停止 1 秒
+Motor_Stop(MOTOR_LEFT);
+Motor_Stop(MOTOR_RIGHT);
+HAL_Delay(1000);  
+
   }
   /* USER CODE END 3 */
 }
