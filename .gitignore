@@ -1,0 +1,29 @@
+# Keil
+*.uvguix.*
+*.uvoptx
+Objects/
+Listings/
+DebugConfig/
+
+# Python
+__pycache__/
+*.pyc
+.venv/
+
+# 系统
+.DS_Store
+Thumbs.db
+
+# 编译输出
+build/
+*.o
+*.d
+*.axf
+*.hex
+*.bin
+*.map
+*.lst
+*.htm
+*.bak
+*.tmp
+*~
